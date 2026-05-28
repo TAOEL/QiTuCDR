@@ -15,6 +15,22 @@
 - 安装脚本默认配置补齐 `NativePanel` 节点，保证新安装环境和运行时默认值一致。
 - 配置脚本、单元测试、文档同步纳入本阶段验收范围，避免代码已变更但文档滞后。
 
+### 验证记录
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File tools\config\Set-QiTuConfig.ps1 -SettingsPath <temp>\settings.json -Json
+dotnet build QiTuCDR.sln --no-restore
+dotnet test tests\Unit\QiTuCDR.Tests\QiTuCDR.Tests.csproj --no-build --verbosity minimal
+```
+
+结果：
+
+```text
+配置脚本验证通过：临时 settings.json 包含 NativePanel。
+构建通过：0 警告，0 错误。
+单元测试通过：51 / 51。
+```
+
 ## 2026-05-27
 
 ### 综合面板

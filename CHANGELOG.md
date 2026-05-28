@@ -40,7 +40,7 @@
 ### 验证
 
 - `dotnet build QiTuCDR.sln --no-restore` 通过，0 警告，0 错误。
-- `dotnet test QiTuCDR.sln --no-build` 通过，50 个测试全部通过。
+- `dotnet test tests\Unit\QiTuCDR.Tests\QiTuCDR.Tests.csproj --no-build --verbosity minimal` 通过，51 个测试全部通过。
 - 独立窗口配置持久化单元测试已覆盖 `NativePanel` 默认值、旧配置兼容和窗口 / 弹层位置保存读取。
 
 ## 0.1.0 - 2026-05-25
