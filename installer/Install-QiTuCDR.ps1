@@ -40,7 +40,17 @@ function New-DefaultConfig {
         BatchSize = 50
         TaskTimeoutMs = 120000
         PreferTypedCorelInterop = $false
+        AllowOfficialCorelDockerAdapter = $false
         DockHostMode = "Debug"
+        NativePanel = [ordered]@{
+            WindowTopmost = $false
+            SaveWindowPosition = $true
+            SaveToolSettings = $true
+            AutoBackupOriginalFile = $false
+            ShowTaskCompletedToast = $true
+            ToolWindowPositions = @{}
+            PopupWindowPositions = @{}
+        }
     }
 }
 
@@ -53,7 +63,7 @@ function Initialize-Config {
     }
 
     if (-not (Test-Path -LiteralPath $Path)) {
-        New-DefaultConfig | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $Path -Encoding UTF8
+        New-DefaultConfig | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $Path -Encoding UTF8
         return
     }
 
@@ -63,7 +73,7 @@ function Initialize-Config {
     catch {
         $backupPath = $Path + ".bad." + (Get-Date).ToUniversalTime().ToString("yyyyMMddHHmmss")
         Copy-Item -LiteralPath $Path -Destination $backupPath -Force
-        New-DefaultConfig | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $Path -Encoding UTF8
+        New-DefaultConfig | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $Path -Encoding UTF8
     }
 }
 
