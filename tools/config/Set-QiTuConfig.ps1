@@ -110,7 +110,7 @@ function Save-Config {
         New-Item -ItemType Directory -Path $directory -Force | Out-Null
     }
 
-    $Config | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $Path -Encoding UTF8
+    $Config | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $Path -Encoding UTF8
 }
 
 if ($EnableTypedInterop -and $DisableTypedInterop) {
@@ -189,7 +189,7 @@ $result = [pscustomobject]@{
 }
 
 if ($Json) {
-    $result | ConvertTo-Json -Depth 5
+    $result | ConvertTo-Json -Depth 6
     exit 0
 }
 
