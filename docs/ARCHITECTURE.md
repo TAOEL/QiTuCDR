@@ -116,7 +116,9 @@ WebView2 Runtime 缺失被视为 fatal Web UI 故障，生命周期会进入 `Re
 - `BatchSize`：批处理分组大小，默认 `50`。
 - `TaskTimeoutMs`：单次任务超时时间，默认 `120000`。
 - `PreferTypedCorelInterop`：是否优先尝试 typed CorelDRAW Interop adapter，默认 `false`。
+- `AllowOfficialCorelDockerAdapter`：是否允许尝试官方 CorelDRAW Docker adapter，默认 `false`；未完成真实宿主验收前不得开启。
 - `DockHostMode`：Dock 宿主模式，默认 `Debug`；可选值为 `Debug`、`CorelDocker`。`CorelDocker` 当前只用于真实 Docker 接入占位，未确认官方 API 前会回退到调试宿主。
+- `NativePanel`：独立 WPF 工具窗口配置，默认开启窗口位置和参数保存预留；其中 `WindowTopmost` 控制窗口置顶，`SaveWindowPosition` 控制主窗口和标题栏弹层位置持久化，`SaveToolSettings` 预留给后续工具参数默认值。
 
 配置文件不存在时会自动写入默认配置。配置 JSON 损坏时会备份为 `settings.json.bad.<timestamp>`，然后回退并重写默认配置；异常只写入日志，不允许抛出到 CorelDRAW 宿主。
 
