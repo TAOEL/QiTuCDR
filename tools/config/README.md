@@ -46,9 +46,20 @@ powershell -ExecutionPolicy Bypass -File tools/config/Set-QiTuConfig.ps1 -DockHo
 powershell -ExecutionPolicy Bypass -File tools/config/Set-QiTuConfig.ps1 -Json
 ```
 
+## NativePanel 默认配置
+
+脚本创建的新配置会包含 `NativePanel` 节点，用于独立 WPF 工具窗口：
+
+- `WindowTopmost`：窗口置顶，默认 `false`。
+- `SaveWindowPosition`：保存窗口和弹层位置，默认 `true`。
+- `SaveToolSettings`：预留工具参数默认值保存，默认 `true`。
+- `AutoBackupOriginalFile`：预留原文件自动备份，默认 `false`。
+- `ShowTaskCompletedToast`：预留任务完成提示，默认 `true`。
+
 ## 规则
 
 - 工具会在配置不存在时创建默认配置。
 - 如果现有 `settings.json` 损坏，会先备份为 `.bad.<timestamp>`，再写入默认配置。
 - typed adapter 仍需要 Host 使用 `EnableCorelDrawInterop=true` 编译；配置开关只决定运行时是否优先尝试 typed adapter。
 - `DockHostMode` 默认保持 `Debug`，小白调试和本地预览不要切到 `CorelDocker`。
+- 不要手动删除 `NativePanel` 节点；旧配置缺少该节点时，脚本和运行时会自动补默认值。
