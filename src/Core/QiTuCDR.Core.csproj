@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>QiTuCDR.Core</RootNamespace>
+    <AssemblyName>QiTuCDR.Core</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bridge\QiTuCDR.Bridge.csproj" />
+    <ProjectReference Include="..\Infrastructure\QiTuCDR.Infrastructure.csproj" />
+    <ProjectReference Include="..\Shared\QiTuCDR.Shared.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+</Project>

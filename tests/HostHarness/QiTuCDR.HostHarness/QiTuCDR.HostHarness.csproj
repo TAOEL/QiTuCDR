@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QiTuCDR.HostHarness</RootNamespace>
+    <AssemblyName>QiTuCDR.HostHarness</AssemblyName>
+    <StartupObject>QiTuCDR.HostHarness.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Host\QiTuCDR.Host.csproj" />
+  </ItemGroup>
+</Project>

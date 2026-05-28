@@ -1,0 +1,15 @@
+<Project>
+  <PropertyGroup>
+    <QiTuVersion>$([System.IO.File]::ReadAllText('$(MSBuildThisFileDirectory)VERSION').Trim())</QiTuVersion>
+    <Version>$(QiTuVersion)</Version>
+    <AssemblyVersion>$(QiTuVersion).0</AssemblyVersion>
+    <FileVersion>$(QiTuVersion).0</FileVersion>
+    <InformationalVersion>$(QiTuVersion)</InformationalVersion>
+    <Product>QiTuCDR</Product>
+    <Company>QiTuCDR</Company>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+</Project>

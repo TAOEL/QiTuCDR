@@ -1,0 +1,133 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Style x:Key="QiTuPrimaryButton" TargetType="Button">
+    <Setter Property="MinHeight" Value="36" />
+    <Setter Property="MinWidth" Value="96" />
+    <Setter Property="Padding" Value="16,0" />
+    <Setter Property="Background" Value="{DynamicResource QiTuAccentPrimary}" />
+    <Setter Property="Foreground" Value="{DynamicResource QiTuTextOnAccent}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="FontSize" Value="{DynamicResource QiTuFontBase}" />
+    <Setter Property="FontWeight" Value="Normal" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Border x:Name="Root"
+                  Background="{TemplateBinding Background}"
+                  CornerRadius="{DynamicResource QiTuRadiusMd}">
+            <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Margin="{TemplateBinding Padding}" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Root" Property="Background" Value="{DynamicResource QiTuAccentPrimaryHover}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+              <Setter TargetName="Root" Property="Background" Value="{DynamicResource QiTuAccentPrimaryActive}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter TargetName="Root" Property="Opacity" Value="0.45" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="QiTuSecondaryButton" TargetType="Button">
+    <Setter Property="MinHeight" Value="36" />
+    <Setter Property="MinWidth" Value="84" />
+    <Setter Property="Padding" Value="16,0" />
+    <Setter Property="Background" Value="{DynamicResource QiTuBgSurface}" />
+    <Setter Property="Foreground" Value="{DynamicResource QiTuTextPrimary}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource QiTuBorderDefault}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="FontSize" Value="{DynamicResource QiTuFontBase}" />
+    <Setter Property="FontWeight" Value="Normal" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Border x:Name="Root"
+                  Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{DynamicResource QiTuRadiusMd}">
+            <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Margin="{TemplateBinding Padding}" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Root" Property="Background" Value="{DynamicResource QiTuBgHover}" />
+              <Setter TargetName="Root" Property="BorderBrush" Value="{DynamicResource QiTuBorderHover}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+              <Setter TargetName="Root" Property="Background" Value="{DynamicResource QiTuBgActive}" />
+              <Setter TargetName="Root" Property="BorderBrush" Value="{DynamicResource QiTuBorderFocus}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter TargetName="Root" Property="Opacity" Value="0.45" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="QiTuDangerButton" TargetType="Button" BasedOn="{StaticResource QiTuPrimaryButton}">
+    <Setter Property="Background" Value="{DynamicResource QiTuAccentDanger}" />
+  </Style>
+
+  <Style x:Key="QiTuWindowIconButton" TargetType="Button">
+    <Setter Property="Width" Value="36" />
+    <Setter Property="Height" Value="32" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="{DynamicResource QiTuTextSecondary}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="FontSize" Value="13" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Border x:Name="Root"
+                  Background="{TemplateBinding Background}">
+            <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Root" Property="Background" Value="{DynamicResource QiTuBgHover}" />
+              <Setter Property="Foreground" Value="{DynamicResource QiTuTextPrimary}" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="QiTuWindowCloseButton" TargetType="Button" BasedOn="{StaticResource QiTuWindowIconButton}">
+    <Setter Property="Width" Value="44" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Border x:Name="Root"
+                  Background="{TemplateBinding Background}">
+            <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center" />
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="Root" Property="Background" Value="{DynamicResource QiTuAccentDanger}" />
+              <Setter Property="Foreground" Value="{DynamicResource QiTuTextOnAccent}" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <OutputType>Library</OutputType>
+    <RootNamespace>QiTuCDR.Host</RootNamespace>
+    <AssemblyName>QiTuCDR.Host</AssemblyName>
+    <EnableCorelDrawInterop Condition="'$(EnableCorelDrawInterop)' == ''">false</EnableCorelDrawInterop>
+    <CorelDrawInteropVersion Condition="'$(CorelDrawInteropVersion)' == ''">27</CorelDrawInteropVersion>
+    <CorelDrawInteropDirectory Condition="'$(CorelDrawInteropDirectory)' == ''">$(MSBuildProjectDirectory)\..\..\artifacts\coreldraw-interop\v$(CorelDrawInteropVersion)</CorelDrawInteropDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(EnableCorelDrawInterop)' == 'true'">
+    <DefineConstants>$(DefineConstants);QITUCDR_TYPED_INTEROP</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2478.35" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bridge\QiTuCDR.Bridge.csproj" />
+    <ProjectReference Include="..\Core\QiTuCDR.Core.csproj" />
+    <ProjectReference Include="..\Infrastructure\QiTuCDR.Infrastructure.csproj" />
+    <ProjectReference Include="..\Shared\QiTuCDR.Shared.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Environment\TypedCorelDocumentAdapter.cs" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(EnableCorelDrawInterop)' == 'true'">
+    <Compile Include="Environment\TypedCorelDocumentAdapter.cs" />
+    <Reference Include="VGCore" Condition="Exists('$(CorelDrawInteropDirectory)\VGCore.dll')">
+      <HintPath>$(CorelDrawInteropDirectory)\VGCore.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\WebUI\**\*.*" Link="WebUI\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QiTuCDR.NativePanelPreview</RootNamespace>
+    <AssemblyName>QiTuCDR.NativePanelPreview</AssemblyName>
+    <StartupObject>QiTuCDR.NativePanelPreview.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2478.35" />
+    <ProjectReference Include="..\..\..\src\Host\QiTuCDR.Host.csproj" />
+  </ItemGroup>
+</Project>

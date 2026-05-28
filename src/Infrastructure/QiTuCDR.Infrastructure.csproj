@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>QiTuCDR.Infrastructure</RootNamespace>
+    <AssemblyName>QiTuCDR.Infrastructure</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\QiTuCDR.Shared.csproj" />
+  </ItemGroup>
+</Project>

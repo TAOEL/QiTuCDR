@@ -1,0 +1,44 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib">
+  <SolidColorBrush x:Key="QiTuBgBase" Color="#F5F5F7" />
+  <SolidColorBrush x:Key="QiTuBgSurface" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="QiTuBgElevated" Color="#F0F0F2" />
+  <SolidColorBrush x:Key="QiTuBgInset" Color="#FAFAFB" />
+  <SolidColorBrush x:Key="QiTuBgHover" Color="#E8E8EB" />
+  <SolidColorBrush x:Key="QiTuBgActive" Color="#E8F5D0" />
+
+  <SolidColorBrush x:Key="QiTuAccentPrimary" Color="#7BC029" />
+  <SolidColorBrush x:Key="QiTuAccentPrimaryHover" Color="#8FD13A" />
+  <SolidColorBrush x:Key="QiTuAccentPrimaryActive" Color="#6BA820" />
+  <SolidColorBrush x:Key="QiTuAccentDanger" Color="#EF4444" />
+  <SolidColorBrush x:Key="QiTuAccentSuccess" Color="#22C55E" />
+  <SolidColorBrush x:Key="QiTuAccentInfo" Color="#3B82F6" />
+
+  <SolidColorBrush x:Key="QiTuTextPrimary" Color="#1C1C1E" />
+  <SolidColorBrush x:Key="QiTuTextSecondary" Color="#6B7280" />
+  <SolidColorBrush x:Key="QiTuTextTertiary" Color="#9CA3AF" />
+  <SolidColorBrush x:Key="QiTuTextOnAccent" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="QiTuBorderDefault" Color="#E5E7EB" />
+  <SolidColorBrush x:Key="QiTuBorderHover" Color="#D1D5DB" />
+  <SolidColorBrush x:Key="QiTuBorderFocus" Color="#7BC029" />
+  <SolidColorBrush x:Key="QiTuShadowSoft" Color="#26000000" />
+  <SolidColorBrush x:Key="QiTuScrollbarThumb" Color="#B8BEC5" />
+  <SolidColorBrush x:Key="QiTuScrollbarThumbHover" Color="#8E96A3" />
+
+  <System:Double x:Key="QiTuFontXs">11</System:Double>
+  <System:Double x:Key="QiTuFontSm">12</System:Double>
+  <System:Double x:Key="QiTuFontBase">13</System:Double>
+  <System:Double x:Key="QiTuFontMd">14</System:Double>
+  <System:Double x:Key="QiTuFontLg">16</System:Double>
+
+  <System:Double x:Key="QiTuSpace1">4</System:Double>
+  <System:Double x:Key="QiTuSpace2">8</System:Double>
+  <System:Double x:Key="QiTuSpace3">12</System:Double>
+  <System:Double x:Key="QiTuSpace4">16</System:Double>
+  <System:Double x:Key="QiTuSpace5">24</System:Double>
+
+  <CornerRadius x:Key="QiTuRadiusSm">4</CornerRadius>
+  <CornerRadius x:Key="QiTuRadiusMd">6</CornerRadius>
+  <CornerRadius x:Key="QiTuRadiusLg">8</CornerRadius>
+</ResourceDictionary>

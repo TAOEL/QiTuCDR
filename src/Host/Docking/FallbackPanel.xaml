@@ -1,0 +1,29 @@
+<UserControl x:Class="QiTuCDR.Host.Docking.FallbackPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             MinWidth="320"
+             MinHeight="480">
+  <Grid Background="#F4F1EA">
+    <StackPanel Margin="18">
+      <TextBlock Text="QiTuCDR"
+                 FontSize="24"
+                 FontWeight="Normal"
+                 Foreground="#1E2528" />
+      <TextBlock Margin="0,8,0,18"
+                 TextWrapping="Wrap"
+                 Foreground="#5A6469"
+                 Text="WebView2 当前不可用，已切换到原生降级面板。核心命令会在接入 CorelDRAW SDK 后继续可用。" />
+      <Button Content="批量转曲"
+              Margin="0,0,0,8"
+              Height="34" />
+      <Button Content="一键居中"
+              Margin="0,0,0,8"
+              Height="34" />
+      <Button Content="冗余清理"
+              Margin="0,0,0,8"
+              Height="34" />
+      <Button Content="尺寸规整"
+              Height="34" />
+    </StackPanel>
+  </Grid>
+</UserControl>
